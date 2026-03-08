@@ -68,7 +68,7 @@ A minimal viable product (MVP) web application for managing army personnel ameni
 
 5. **Run the application**
    ```bash
-   python main.py
+   uvicorn main:app --port 8000
    ```
 
 6. **Access the application**
