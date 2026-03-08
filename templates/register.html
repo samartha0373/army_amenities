@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="mb-4"><i class="bi bi-person-plus me-2"></i>User Registration</h2>
+            
+            {% if message %}
+            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+            {% endif %}
+            
+            {% if error %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ error }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+            {% endif %}
+            
+            <form method="POST" action="/register">
+                <div class="mb-3">
+                    <label for="army_no" class="form-label">Army Number</label>
+                    <input type="text" class="form-control" id="army_no" name="army_no" required placeholder="e.g., 12345678" pattern="[0-9]{8}" minlength="8" maxlength="8" title="Exactly 8 digits">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="full_name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="full_name" name="full_name" required placeholder="Enter your full name">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="position" class="form-label">Position</label>
+                    <input type="text" class="form-control" id="position" name="position" required placeholder="e.g., Officer, Soldier">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required placeholder="Enter your email">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required placeholder="Enter your phone number">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required placeholder="Create a password">
+                </div>
+                
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-modern">Register</button>
+                </div>
+                
+                <div class="text-center mt-3">
+                    <p>Already registered? <a href="/login" class="text-decoration-none">Login here</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="container">
+    <!-- Hero Section -->
+    <div class="row mb-5">
+        <div class="col-md-12 text-center">
+            <h1 class="mb-3"><i class="bi bi-shield-check" style="font-size: 2rem; color: #3b82f6;"></i></h1>
+            <h2 class="mb-3">Army Amenities Portal</h2>
+            <p class="lead text-muted">Streamlined system for managing soldier amenities and requests</p>
+        </div>
+    </div>
+    
+    <!-- Two User Types Section -->
+    <div class="row g-4">
+        <!-- User Card -->
+        <div class="col-md-6">
+            <div class="card border-0 h-100 shadow-sm" style="transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)';">
+                <div class="card-body text-center py-5">
+                    <i class="bi bi-people" style="font-size: 3rem; color: #3b82f6; margin-bottom: 1rem; display: block;"></i>
+                    <h4 class="card-title mb-3">Soldiers / Users</h4>
+                    <p class="card-text text-muted mb-4">
+                        Register and submit your amenity requests. Track the status of your demands in real-time.
+                    </p>
+                    <div class="d-grid gap-2">
+                        <a href="/register" class="btn btn-modern mb-2">Register Now</a>
+                        <a href="/login" class="btn btn-outline-secondary">Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Store IC Card -->
+        <div class="col-md-6">
+            <div class="card border-0 h-100 shadow-sm" style="transition: transform 0.3s ease, box-shadow 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 8px 25px rgba(0,0,0,0.12)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.08)';">
+                <div class="card-body text-center py-5">
+                    <i class="bi bi-shield-lock" style="font-size: 3rem; color: #d32f2f; margin-bottom: 1rem; display: block;"></i>
+                    <h4 class="card-title mb-3">Store IC</h4>
+                    <p class="card-text text-muted mb-4">
+                        Manage all soldier requests. Accept, reject, or delay demands based on availability.
+                    </p>
+                    <div class="d-grid gap-2">
+                        <a href="/store-ic-login" class="btn btn-outline-danger">Store IC Login</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Features Section -->
+    <!-- <div class="row mt-5">
+        <div class="col-md-12">
+            <h3 class="mb-4 text-center">Key Features</h3>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="d-flex">
+                        <div class="me-3">
+                            <i class="bi bi-check-circle" style="font-size: 1.5rem; color: #3b82f6;"></i>
+                        </div>
+                        <div>
+                            <h5>Easy Registration</h5>
+                            <p class="text-muted small">Quick and simple registration process for soldiers</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="d-flex">
+                        <div class="me-3">
+                            <i class="bi bi-clock-history" style="font-size: 1.5rem; color: #3b82f6;"></i>
+                        </div>
+                        <div>
+                            <h5>Real-time Tracking</h5>
+                            <p class="text-muted small">Track your demand status in real-time</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="d-flex">
+                        <div class="me-3">
+                            <i class="bi bi-gear" style="font-size: 1.5rem; color: #3b82f6;"></i>
+                        </div>
+                        <div>
+                            <h5>Efficient Management</h5>
+                            <p class="text-muted small">Store IC can manage all demands efficiently</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+{% endblock %}

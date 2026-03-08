@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Store IC Login{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="mb-4"><i class="bi bi-shield-lock me-2"></i>Store IC Login</h2>
+            
+            {% if error %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ error }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+            {% endif %}
+            
+            <form method="POST" action="/store-ic-login">
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" required placeholder="Enter store IC username">
+                </div>
+                
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" required placeholder="Enter password">
+                </div>
+                
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-modern">Login</button>
+                </div>
+                
+                <div class="text-center mt-3">
+                    <p>Are you a user? <a href="/login" class="text-decoration-none">User Login</a></p>
+                </div>
+            </form>
+            
+            <!-- <div class="alert alert-info mt-4">
+                <small><strong>Demo Credentials:</strong><br>Username: store_ic<br>Password: admin123</small>
+            </div> -->
+        </div>
+    </div>
+</div>
+{% endblock %}
