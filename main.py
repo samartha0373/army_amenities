@@ -2,6 +2,7 @@ from database import (get_con, register_user, user_exists, get_user, add_demand,
                      get_user_demands, get_all_demands, update_demand_status)
 from fastapi import FastAPI, Request, HTTPException, responses, status
 from fastapi.templating import Jinja2Templates
+from password_hash import hash_password, verify_password
 
 app = FastAPI()
 
@@ -48,7 +49,7 @@ async def register(request: Request):
     position = form_data.get("position")
     email = form_data.get("email")
     phone = form_data.get("phone")
-    password = form_data.get("password")
+    password = hash_password(form_data.get("password"))
     
     # validate army number length (8 characters)
     if not army_no or len(army_no) != 8:
@@ -97,11 +98,11 @@ def login_page(request: Request):
 async def login(request: Request):
     form_data = await request.form()
     army_no = form_data.get("army_no")
-    password = form_data.get("password")
+    plain_password = form_data.get("password")
     
     # Check if user exists and password matches
     user = get_user(army_no)
-    if not user or user[5] != password:
+    if not user or not verify_password(plain_password=plain_password, hashed_password=user[5]) :
         return templates.TemplateResponse(
             request,
             "login.html",
