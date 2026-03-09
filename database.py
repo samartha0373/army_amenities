@@ -4,13 +4,16 @@ import mysql.connector
 
 
 def get_con():
-    con = mysql.connector.connect(
-        host = "localhost",
-        user = "root",
-        password = "password",
-        database = "aa_project"
-    )
-    return con
+    try:
+        con = mysql.connector.connect(
+            host = "localhost",
+            user = "root",
+            password = "password",
+            database = "aa_project"
+        )
+        return con
+    except Exception as e:
+        return f"error in mysql connection: {e}"
 
 
 def create_db():

@@ -87,18 +87,11 @@ A minimal viable product (MVP) web application for managing army personnel ameni
 2. View all pending demands in dashboard
 3. Click action buttons to Accept, Delay, or Reject demands
 
-## Item List
-
-Available items for demand:
-- Boots (Aku, Altberg, Iturri)
-- MTP Clothing (Shirt, Jacket Smock, Trousers, Goretex Top/Bottom)
-- Accessories (Socks, Olive T-shirt, Jungle Hat, Fleece)
-- Thermal Underwear (Inner Top, Inner Bottom)
 
 ## Notes
 
-- This is an MVP with basic authentication (global session variables)
-- Production deployment requires database password updates and proper session management
+- This is an MVP with basic password encryption.
+- Production deployment proper session management
 - Tooltips on action buttons show "Accept", "Delay", "Reject" on hover
 - Registration uses client-side and server-side validation for army number format (exactly 8 characters)
 
