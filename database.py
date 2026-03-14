@@ -3,19 +3,6 @@ database name = aa_project, table name = user_details, user_amenities"""
 import mysql.connector
 
 
-def get_con():
-    try:
-        con = mysql.connector.connect(
-            host = "localhost",
-            user = "root",
-            password = "password",
-            database = "aa_project"
-        )
-        return con
-    except Exception as e:
-        return f"error in mysql connection: {e}"
-
-
 def create_db():
     con = mysql.connector.connect(
         host = "localhost",
@@ -30,6 +17,14 @@ def create_db():
     con.commit()
     con.close()
 
+def get_con():
+    con = mysql.connector.connect(
+        host = "localhost",
+        user = "root",
+        password = "password",
+        database = "aa_project"
+    )
+    return con
 
 def create_tables():
     con = get_con()
@@ -171,4 +166,5 @@ def update_demand_status(demand_id, status):
         print(f"Error updating demand status: {e}")
         return False
 
+create_db()
 create_tables()
